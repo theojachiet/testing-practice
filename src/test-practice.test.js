@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from './test-practice.js';
+import { capitalize, reverseString, calculator, caesarCipher } from './test-practice.js';
 
 test('capitalize first letter', () => {
     let testCases = [
@@ -73,3 +73,7 @@ test('Multiplying 2 numbers', () => {
     expect(calculator.multiply(10, 0.5)).toBe(5);
     expect(() => calculator.multiply('ab', 'bc')).toThrow();
 });
+
+test('Ceasar cipher simple letter shift', () => {
+    expect(caesarCipher('abc', 3)).toBe('def');
+})

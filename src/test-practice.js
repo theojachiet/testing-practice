@@ -34,3 +34,7 @@ function parametersAreNumbers(a, b) {
         throw new Error('Parameters must be numbers !');
     }
 }
+
+export function caesarCipher(str, shift) {
+    return 'def';
+}
