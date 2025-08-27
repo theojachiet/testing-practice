@@ -27,7 +27,7 @@ Normally, all the needed packages should be installed. Still, the css minimizer 
     `npm run build`
     - To start your page in the browser (will automatically refresh each time you save your files) <br>
     `npmm run dev`
-    -To deploy your repo through github pages (be sure to build and push all changes before doing that) <br>
+    - To deploy your repo through github pages (be sure to build and push all changes before doing that) <br>
     `npm run deploy` <br>
     If there are any errors with this command, make sure you have installed the gh-pages package correctly <br>
     `npm install -D gh-pages`
