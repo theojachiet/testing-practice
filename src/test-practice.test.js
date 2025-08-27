@@ -50,4 +50,26 @@ test('Sum of 2 numbers', () => {
     expect(calculator.sum(1, 2)).toBe(3);
     expect(calculator.sum(-3, 5)).toBe(2);
     expect(() => calculator.sum('ab', 'bc')).toThrow();
-})
+});
+
+test('Substrac of 2 numbers', () => {
+    expect(calculator.substract(1, 2)).toBe(-1);
+    expect(calculator.substract(-3, 5)).toBe(-8);
+    expect(() => calculator.substract('ab', 'bc')).toThrow();
+});
+
+test('Dividing 2 numbers', () => {
+    //Normal Cases
+    expect(calculator.divide(1, 2)).toBeCloseTo(0.5);
+    expect(calculator.divide(10, 2)).toBe(5);
+    expect(() => calculator.divide('ab', 'bc')).toThrow();
+    //Divinding by 0 case
+    expect(() => calculator.divide(5, 0)).toThrow();
+});
+
+test('Multiplying 2 numbers', () => {
+    //Normal Cases
+    expect(calculator.multiply(1, 2)).toBe(2);
+    expect(calculator.multiply(10, 0.5)).toBe(5);
+    expect(() => calculator.multiply('ab', 'bc')).toThrow();
+});
