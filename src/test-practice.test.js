@@ -1,10 +1,10 @@
 import { capitalize } from './test-practice.js';
 
-test('capitalize becomes Capitalize', () => {
+test('capitalize first letter', () => {
     let sample = [
         {
-            input: 'capitalize',
-            expected: 'Capitalize'
+            input: 'energY',
+            expected: 'EnergY'
         },
         {
             input: 'google',
@@ -18,4 +18,5 @@ test('capitalize becomes Capitalize', () => {
     sample.forEach(function(t) {
         expect(capitalize(t.input)).toBe(t.expected);
     })
+    expect(() => capitalize(78952)).toThrow(Error);
 });
