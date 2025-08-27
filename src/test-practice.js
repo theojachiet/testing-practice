@@ -5,3 +5,12 @@ export function capitalize(str) {
 export function reverseString(str) {
     return str.split('').reverse().join('');
 }
+
+export const calculator = {
+    sum(a, b) {
+        if (isNaN(a) || isNaN(b)) {
+            throw new Error('Parameters must be numbers !');
+        }
+        return a + b;
+    }
+}

@@ -1,4 +1,4 @@
-import { capitalize, reverseString, errorThrow } from './test-practice.js';
+import { capitalize, reverseString, calculator } from './test-practice.js';
 
 test('capitalize first letter', () => {
     let testCases = [
@@ -41,3 +41,13 @@ test('reverse String', () => {
         expect(reverseString(t.input)).toBe(t.expected);
     })
 });
+
+test('calculator object exists', () => {
+    expect(typeof calculator).toBe('object');
+});
+
+test('Sum of 2 numbers', () => {
+    expect(calculator.sum(1, 2)).toBe(3);
+    expect(calculator.sum(-3, 5)).toBe(2);
+    expect(() => calculator.sum('ab', 'bc')).toThrow();
+})
