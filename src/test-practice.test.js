@@ -76,4 +76,14 @@ test('Multiplying 2 numbers', () => {
 
 test('Ceasar cipher simple letter shift', () => {
     expect(caesarCipher('abc', 3)).toBe('def');
+    expect(caesarCipher('def', -3)).toBe('abc');
+});
+
+test('Ceasar cipher uppercases', () => {
+    expect(caesarCipher('ABC', 3)).toBe('DEF');
+    expect(caesarCipher('aBc', 3)).toBe('dEf');
+});
+
+test('Caesar cipher wrapping around the alphabet', () => {
+    expect(caesarCipher('xyz', 3)).toBe('abc');
 })

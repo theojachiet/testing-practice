@@ -36,5 +36,25 @@ function parametersAreNumbers(a, b) {
 }
 
 export function caesarCipher(str, shift) {
-    return 'def';
+    const lowercase = [..."abcdefghijklmnopqrstuvwxyz"];
+    const uppercase = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+
+    let strAsArray = str.split('');
+    let stringBuilder = '';
+
+    for (let char of strAsArray) {
+        if (lowercase.includes(char)) {
+            const alphabetIndex = lowercase.indexOf(char);
+            const newLetter = lowercase.at(alphabetIndex + shift);
+            stringBuilder += newLetter; 
+        } else if (uppercase.includes(char)) {
+            const alphabetIndex = uppercase.indexOf(char);
+            const newLetter = uppercase.at(alphabetIndex + shift);
+            stringBuilder += newLetter; 
+        } else {
+            stringBuilder += char;
+        }
+    }
+
+    return stringBuilder;
 }
