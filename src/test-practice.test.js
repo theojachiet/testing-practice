@@ -86,4 +86,5 @@ test('Ceasar cipher uppercases', () => {
 
 test('Caesar cipher wrapping around the alphabet', () => {
     expect(caesarCipher('xyz', 3)).toBe('abc');
+    expect(caesarCipher('xYz', 29)).toBe('aBc');
 })

@@ -45,11 +45,17 @@ export function caesarCipher(str, shift) {
     for (let char of strAsArray) {
         if (lowercase.includes(char)) {
             const alphabetIndex = lowercase.indexOf(char);
-            const newLetter = lowercase.at(alphabetIndex + shift);
+
+            const newIndex = alphabetWrapper(alphabetIndex, shift);
+            const newLetter = lowercase[newIndex];
+            
             stringBuilder += newLetter; 
         } else if (uppercase.includes(char)) {
             const alphabetIndex = uppercase.indexOf(char);
-            const newLetter = uppercase.at(alphabetIndex + shift);
+
+            const newIndex = alphabetWrapper(alphabetIndex, shift);
+            const newLetter = uppercase[newIndex];
+
             stringBuilder += newLetter; 
         } else {
             stringBuilder += char;
@@ -57,4 +63,12 @@ export function caesarCipher(str, shift) {
     }
 
     return stringBuilder;
+}
+
+function alphabetWrapper(index, shift) {
+    let newIndex = index + shift;
+    while (newIndex > 25) {
+        newIndex -= 26;
+    }
+    return newIndex;
 }
