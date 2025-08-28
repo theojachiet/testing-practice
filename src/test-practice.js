@@ -48,15 +48,15 @@ export function caesarCipher(str, shift) {
 
             const newIndex = alphabetWrapper(alphabetIndex, shift);
             const newLetter = lowercase[newIndex];
-            
-            stringBuilder += newLetter; 
+
+            stringBuilder += newLetter;
         } else if (uppercase.includes(char)) {
             const alphabetIndex = uppercase.indexOf(char);
 
             const newIndex = alphabetWrapper(alphabetIndex, shift);
             const newLetter = uppercase[newIndex];
 
-            stringBuilder += newLetter; 
+            stringBuilder += newLetter;
         } else {
             stringBuilder += char;
         }
@@ -71,4 +71,38 @@ function alphabetWrapper(index, shift) {
         newIndex -= 26;
     }
     return newIndex;
+}
+
+export function analyzeArray(array) {
+    let object = {};
+    object.average = average(array);
+    object.min = min(array);
+    object.max = max(array);
+    object.length = array.length;
+
+    return object;
+}
+
+function average(array) {
+    let sum = 0;
+    for (let number of array) {
+        sum += number;
+    }
+    return sum / array.length;
+}
+
+function min(array) {
+    let min = array[0];
+    for (let number of array) {
+        if (number < min) min = number;
+    }
+    return min;
+}
+
+function max(array) {
+    let max = array[0];
+    for (let number of array) {
+        if (number > max) max = number;
+    }
+    return max;
 }
